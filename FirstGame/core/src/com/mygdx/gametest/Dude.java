@@ -1,7 +1,6 @@
 package com.mygdx.gametest;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import java.lang.Math;
 
@@ -30,6 +29,10 @@ public class Dude {
     }
 
     public void update() {
+
+        onPlatform = false; // This is done for falling purposes, otherwise, as written, the code can't make the dude fall when
+                            // he walks off the side of a platform without jumping
+
         if (moveLeft) {
             x -= movingLRspeed;
             x2 -= movingLRspeed;
