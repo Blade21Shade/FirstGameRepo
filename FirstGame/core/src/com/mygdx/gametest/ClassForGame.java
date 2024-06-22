@@ -31,7 +31,7 @@ public class ClassForGame extends ApplicationAdapter {
 
 		// Check if the dude is colliding with any of the platforms
 		for (Platform platform : platforms) {
-			dude.collisionCheck2(platform);
+			dude.collisionCheck(platform);
 		}
 
 		// Start drawing

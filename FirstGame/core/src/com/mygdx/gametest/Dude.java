@@ -92,49 +92,6 @@ public class Dude {
     }
 
     public void collisionCheck(Platform platform) {
-        // Top and bottom check
-        if (x2 > platform.x && x < platform.x2) { // Dude is Within platform boundaries
-            if (y <= platform.y2 && y >= platform.y2 - 4) { // Top check
-                y = platform.y2;
-                y2 = y + rectHeight;
-                
-                onPlatform = true;
-
-                falling = false;
-                jumping = false;
-                i = 0;
-                
-            } else if (y2 > platform.y && y < platform.y ) { // Bottom check
-                y2 = platform.y - circRad * 2;
-                y = y2 - rectHeight;
-                
-                falling = true;
-                jumping = false;
-                i = 0;
-            }
-        } 
-
-        // Difference may still need to be implemented !!!
-        // That is, the differences between the platform and dude's x and ys are found, and the least of those is used to place the dude
-
-        // Left and right check
-        // First check to make sure the dude isn't completely above or below the platform
-        // If he isn't, and therefore he is beside it height wise to some extent, check to see if he is encroaching on the platform
-        // If so, move him so he isn't
-
-        if (!(y >= platform.y2 && y2 >= platform.y2) && !(y <= platform.y && y2 <= platform.y)) {
-            if (x2 >= platform.x && x < platform.x) { // Left check
-                x = platform.x - rectWidth;
-            } else if (x <= platform.x2 && x2 > platform.x2) { // Right check
-                x = platform.x2;
-            }
-        }
-
-        x2 = x + rectWidth;
-        y2 = y + rectHeight;
-    }
-
-    public void collisionCheck2(Platform platform) {
 
         // See if dude is within this platform's boundaries, if not do nothing
         if (x2 > platform.x && x < platform.x2 && y2 >= platform.y && y <= platform.y2) {
@@ -143,13 +100,13 @@ public class Dude {
             // The smallest difference is then used to place the dude
             int left, right, top, bottom;
 
-            top = Math.abs(y - platform.y2); //    1
+            top = Math.abs(y - platform.y2); //    1 (These 1-4 are used in the switch statement)
             bottom = Math.abs(y2 - platform.y); // 2
             left = Math.abs(x2 - platform.x); //   3
             right = Math.abs(x - platform.x2); //  4
             
-            int smallestDif = 1; // Used in a case statement to place dude, changes based on smallest value, numbers above correlate
-            int smallestDifValue = top; // Used for mathematical checking
+            int smallestDif = 1; // Used in a case statement to place dude, changes based on smallest value, start with top
+            int smallestDifValue = top; // Used for mathematical checking, once again start with top
 
             // Find the smallest difference
             

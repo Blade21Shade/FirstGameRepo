@@ -38,7 +38,7 @@ public class Platform {
         int bottomMid = Gdx.graphics.getHeight()/4;
         int mid = bottomMid * 2;
         int topMid = bottomMid * 3;
-        int top = Gdx.graphics.getHeight();
+        int top = bottomMid * 4;
 
         int numOfPlatformsInBottom = 0, numOfPlatformsInBottomMid = 0, numOfPlatformsInTopMid = 0, numOfPlatformsInTop = 0;
 
@@ -48,8 +48,8 @@ public class Platform {
         for (int i = 0; i < numberOfPlatforms; i++) {
 
             // Find width for this platform
-            double tempDouble = Math.random() * 100;
-            thisWidth = (int)tempDouble;
+            ranD = Math.random() * 100;
+            thisWidth = (int)ranD; // Casting on the same line wasn't working so I split it into two
             if (thisWidth < minWidth) { // MaxWidth is already enforced, so no need to check
                 thisWidth = minWidth; // I may redo how I do width stuff but for now this is fine
             }
@@ -75,7 +75,7 @@ public class Platform {
                 numOfPlatformsInTop++;
             } // An else could be put here for making sure all platforms are put somewhere, but isn't necessary 
 
-            // Add to the platforms arrayList for safe keeping
+            // Add to the platforms arrayList for usage later
             platforms.add(new Platform(x, y, thisWidth, allHeight));
         }
     }
