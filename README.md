@@ -19,3 +19,5 @@ I initially started with a bunch of if statements to "push" the player chararcte
 After the physics engine was done I messed with producing platforms that weren't just the staircase I had been using for testing. This is still very rudimentary and does not work well, and if I were to return to the project this is one of the first things that I would need to work on.
 
 Ensuring the jumping and platform systems didn't "fight" would also be a high priority.
+
+Making it so the user can go to different stages by moving off screen, with some functionality to have a permanent "bottom level of stages", and ensuring that if they moved back to an already created stage it would be the same as they left it. So effectively a mapping system.
