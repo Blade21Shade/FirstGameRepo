@@ -9,10 +9,13 @@ Instead, this "game" really just became an incredibly simple physics/collision e
 The game can be played [insert keys with how to play]
 
 ## Takeaways
-The big takeaway for this game was that physics engines, even simple ones, are pretty hard to get correct. Another takeaway is that if you have multiple systems running at once, in this case a physics system and a jumping system, you need to make sure they work correctly together, and in my opinion it is best to develop them to work together from the beginning rather than slap one on part way through developing the other. As is, I wouldn't be surprised if the two still "fight" a little, but it is working according to the eyes so the user wouldn't know. If I would come back to this game, I would probably start by ensuring those two systems work together correctly.
+The big takeaway for this game was that physics engines, even simple ones, are pretty hard to get correct. Another takeaway is that if you have multiple systems running at once, in this case a physics system and a jumping system, you need to make sure they work correctly together, and in my opinion it is best to develop them to work together from the beginning rather than slap one on part way through developing the other. As is, I wouldn't be surprised if the two still "fight" a little, but it is working according to the eyes so the user wouldn't know.
 
 
 ## As for the physics engine
 I initially started with a bunch of if statements to "push" the player chararcter, called "Dude" in the code, around as necessary. However, this, along with the jumping in the game, caused issues with him phasing through objects, getting pushed under objects he shouldn't have been pushed under, and issues with not falling when he was supposed to. I went through a few steps to try and fix this, mostly by consolidating if statements into much larger checks. While this worked, it was very complex and it looked ugly. In the end, I decided to use a switch satement to move the Dude around. This case statement worked because I added some basic functionality that made it so when the Dude was within the bounds of a platform, some measurements were taken and stored as to how far the respective edge of the dude was from each edge. Then, whichever of those measurements were the least decides which direction the dude is pushed. This worked very well, and once it was done I was happy with the physics engine.
 
-Then I messed with producing platforms that weren't just the staircase I had been using. This is still very rudimentary and does not work well, and if I were to return to the project this is one of the first things that I would need to work on.
+## Possible future work
+After the physics engine was done I messed with producing platforms that weren't just the staircase I had been using for testing. This is still very rudimentary and does not work well, and if I were to return to the project this is one of the first things that I would need to work on.
+
+Ensuring the jumping and platform systems didn't "fight" would also be a high priority.
