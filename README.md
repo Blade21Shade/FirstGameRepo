@@ -6,7 +6,7 @@ As of writing this it doesn't accomplish that end goal, and I'm not currently pl
 
 Instead, this "game" really just became an incredibly simple physics/collision engine
 
-The game can be played [insert keys with how to play]
+The game can be played with: Left arrow key to move left, right arrow key to move right, up arrow key to jump
 
 ## Takeaways
 The big takeaway for this game was that physics engines, even simple ones, are pretty hard to get correct. Another takeaway is that if you have multiple systems running at once, in this case a physics system and a jumping system, you need to make sure they work correctly together, and in my opinion it is best to develop them to work together from the beginning rather than slap one on part way through developing the other. As is, I wouldn't be surprised if the two still "fight" a little, but it is working according to the eyes so the user wouldn't know.
